@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>OTP Verification</h2>
+            <p class="auth-text">We have sent a One-Time Password (OTP) to your registered mobile number.</p>
+            <form action="#" method="POST" class="auth-form">
+                <div class="form-group">
+                    <label for="otp">Enter OTP</label>
+                    <input type="password" id="otp" name="otp" placeholder="Enter 6-digit OTP" required>
+                </div>
+                <button type="submit" class="auth-btn">Verify</button>
+                <p class="auth-text">
+                    Didn't receive the OTP? <a href="#">Resend OTP</a>.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Wait for the DOM to load before executing the script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the OTP form element
+            const otpForm = document.querySelector('.auth-form');
+            
+            // Add event listener to the form for the submit action
+            otpForm.addEventListener('submit', function(event) {
+                // Prevent the default form submission behavior (e.g., page refresh)
+                event.preventDefault();
+
+                // Get the OTP value
+                const otp = document.getElementById('otp').value;
+
+                // Validate OTP
+                if (otp === '') {
+                    alert('Please enter the OTP.');
+                    return;  // Stop form submission if OTP is empty
+                }
+
+                // Check if the OTP is a 6-digit number
+                if (!/^\d{6}$/.test(otp)) {
+                    alert('Please enter a valid 6-digit OTP.');
+                    return;  // Stop form submission if OTP is not 6 digits
+                }
+
+                // If OTP is valid, show success message
+                alert('OTP verified successfully!');
+                
+                // Optionally, you can submit the form here or redirect to another page
+                // otpForm.submit(); // Uncomment this line if you want to submit the form
+            });
+
+            // Add event listener for Resend OTP
+            const resendOTPLink = document.querySelector('a[href="#"]');
+            resendOTPLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                alert('A new OTP has been sent to your registered mobile number.');
+            });
+        });
+    </script>
+</body>
+</html>
