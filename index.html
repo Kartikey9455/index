@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>S.R. Robotics and Software Solutions Pvt. Ltd.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="S.R. Robotics Logo" class="logo">
+                <h1>S.R. Robotics & Software Solutions Pvt. Ltd.</h1>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#contact"  class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Signup and Login Buttons -->
+    <div class="auth-buttons">
+        <a href="signup page.html" target="_blank">
+            <button id="signup-btn" class="auth-btn">Sign Up</button>
+        </a>
+        <a href="login.html" target="_blank">
+            <button id="login-btn" class="auth-btn">Login</button>
+        </a>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="container">
+            <h2>Innovating the Future of Robotics & Software</h2>
+            <p><strong>Start with zero - 0</strong></p>
+            <p>Founded in 2025, S.R Robotics and Software Solutions is dedicated to revolutionizing the way school children engage with electronics and technology.</p>
+            <div class="founder-info">
+                <img src="IMG_20220408_132603.jpg" alt="Founder" class="founder-img" width="150">
+                <div>
+                    <h3>Kartikey Pandey</h3>
+                    <p>B.Tech (ECE)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2><a href="Our Services.html" target="_blank">Our Services</a></h2>
+            <div class="service-grid">
+                <div class="service">
+                    <h3><a href="Our Services.html" target="_blank">Robotics Solutions</a></h3>
+                    <p>Design and development of robots for various industries...</p>
+                </div>
+                <div class="service">
+                    <h3><a href="Our Services.html" target="_blank">Software Development</a></h3>
+                    <p>Custom software solutions tailored to your business needs...</p>
+                </div>
+                <div class="service">
+                    <h3><a href="Our Services.html" target="_blank">AI & Automation</a></h3>
+                    <p>Implementing artificial intelligence and automation...</p>
+                </div>
+                <div class="service">
+                    <h3><a href="Our Services.html" target="_blank">Robotics Kits & Tools</h3>
+                    <p>Providing hands-on kits for teaching STEM concepts...</p>
+                </div>
+                <div class="service">
+                    <h3><a href="Our Services.html" target="_blank">Front-End Developer</a></h3>
+                    <p>Designing websites for future growth...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you'd like to learn more about our services or have a project in mind, reach out to us today!</p>
+            <address>
+                Email: <a href="mailto:info@srrrobotics.com">info@srrrobotics.com</a><br>
+                Phone: +91 9455499291
+                <a href="contact.html">Contact Us</a>
+            </address>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 S.R. Robotics & Software Solutions Pvt. Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Change active state on navbar based on current section
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(currentSection)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Optional: Highlight active navbar link when the user is on a section
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
