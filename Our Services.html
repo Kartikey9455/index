@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="our services style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="S.R. Robotics Logo" class="logo">
+            <h1>S.R. Robotics & Software Solutions Pvt. Ltd.</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a target="_blank" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="auth-buttons">
+        <a href="signup page.html" target="_blank">
+            <button id="signup-btn" class="auth-btn">Sign Up</button>
+        </a>
+        <a href="login.html" target="_blank">
+            <button id="login-btn" class="auth-btn">Login</button>
+        </a>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service">
+                    <img src="robimg.png" alt="Robotics Solutions">
+                    <h3>Robotics Solutions</h3>
+                    <p>Design and development of robots for various industries...</p>
+                </div>
+                <div class="service">
+                    <img src="soft.png" alt="Software Development">
+                    <h3>Software Development</h3>
+                    <p>Custom software solutions tailored to your business needs...</p>
+                </div>
+                <div class="service">
+                    <img src="aiimg.png" alt="AI & Automation">
+                    <h3>AI & Automation</h3>
+                    <p>Implementing artificial intelligence and automation...</p>
+                </div>
+                <div class="service">
+                    <img src="roboimg2.png" alt="Robotics Kits & Tools">
+                    <h3>Robotics Kits & Tools</h3>
+                    <p>Providing hands-on kits for teaching STEM concepts...</p>
+                </div>
+                <div class="service">
+                    <img src="fornt.png" alt="Front-End Development">
+                    <h3>Front-End Development</h3>
+                    <p>Designing websites for future growth...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="payment-icon">
+            <a href="payment page.html" target="_blank">pay now</a>
+            <i class="fas fa-credit-card fa-3x"></i>
+        </div>
+    </section>
+
+    <a href="S.R_Robotics_Pvt.Ltd.html">Go to Home Page</a>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('.nav-list a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Hover effect on Service Cards
+        const services = document.querySelectorAll('.service');
+
+        services.forEach(service => {
+            service.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = '0.3s ease';
+            });
+            service.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple popup for Pay Now button
+        const payButton = document.querySelector('.payment-icon a');
+
+        payButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from navigating
+            alert("You will be redirected to the payment page.");
+            window.location.href = this.getAttribute('href'); // Redirect after alert
+        });
+    </script>
+</body>
+</html>
